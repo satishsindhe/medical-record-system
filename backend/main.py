@@ -1,9 +1,9 @@
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
-from .database import SessionLocal, engine
 
-from .models import Base, User
-from .schemas import UserCreate
+from .app.database import SessionLocal, engine
+from .app.models import Base, User
+from .app.schemas import UserCreate
 from fastapi.middleware.cors import CORSMiddleware
 
 Base.metadata.create_all(bind=engine)
